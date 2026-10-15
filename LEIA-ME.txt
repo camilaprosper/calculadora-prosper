@@ -1,0 +1,29 @@
+PROSPER — CALCULADORA WEB INSTALÁVEL COM MODO OFFLINE
+
+Este pacote prepara a calculadora para ser publicada como PWA. Não basta abrir index.html diretamente do armazenamento do tablet: para instalar com ícone e garantir o cache offline, publique os arquivos em um endereço HTTPS.
+
+ARQUIVOS
+- index.html: calculadora Prosper com 37 estruturas, tabela/manual, arredondamento e histórico local.
+- manifest.webmanifest: nome e comportamento de instalação.
+- service-worker.js: armazena a calculadora para abrir offline depois do primeiro acesso online.
+- icon.svg: ícone Prosper.
+
+OPÇÃO SEM MENSALIDADE: GitHub Pages (hospedagem estática gratuita)
+1. Em um computador, entre em https://github.com e crie uma conta ou entre na sua conta.
+2. Crie um repositório público chamado prosper-calculadora.
+3. Envie os quatro arquivos deste pacote para a raiz do repositório (Add file > Upload files > Commit changes).
+4. No repositório, abra Settings > Pages.
+5. Em Build and deployment, escolha Deploy from a branch; branch main e folder /(root); clique Save.
+6. Aguarde a publicação e abra o endereço HTTPS que o GitHub Pages apresentar. O endereço costuma seguir o formato https://SEU-USUARIO.github.io/prosper-calculadora/ (use o endereço real mostrado pelo GitHub).
+7. No Samsung Galaxy Tab, abra esse endereço no Chrome com Wi-Fi ligado e aguarde carregar completamente.
+8. Abra o menu ⋮. Agora, por ser um site HTTPS com manifest, deverá aparecer Instalar app ou Adicionar à tela inicial (a disponibilidade depende da versão do Chrome). Confirme o nome Prosper.
+9. Abra pelo ícone instalado uma vez online. Depois, teste com modo avião. O service worker guarda a página e os recursos locais.
+
+HISTÓRICO
+Os cálculos são guardados no armazenamento local do navegador/aplicativo instalado, não enviados para a internet. Não use Limpar dados do site/navegador se quiser manter o histórico. Exporte CSV periodicamente como cópia de segurança.
+
+NOTAS
+- Hospedagem gratuita não tem mensalidade, mas exige uma conta e publicação inicial.
+- O modo offline só fica pronto depois de abrir a versão publicada com internet pelo menos uma vez e aguardar o carregamento.
+- Não publique informações comerciais confidenciais; o código contém a tabela de preços da Prosper.
+- Se alterar a calculadora futuramente, incremente CACHE_NAME no service-worker.js para forçar atualização.
